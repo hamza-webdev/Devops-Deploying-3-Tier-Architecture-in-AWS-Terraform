@@ -3,7 +3,8 @@
 ########################################################
 
 resource "aws_instance" "web" {
-  ami           = "ami-0493936afbe820b28"
+#   ami           = "ami-0493936afbe820b28" # Ubuntu server
+  ami           = "ami-02b01316e6e3496d9"
   instance_type = "t2.micro"
   key_name = "AWS_PAIRE_KEY_TERRAFORM"
   subnet_id = aws_subnet.public[count.index].id
