@@ -17,12 +17,12 @@ resource "aws_instance" "web" {
 
   provisioner "file" {
     source = "./AWS_PAIRE_KEY_TERRAFORM.pem"
-    destination = "/home/ec2-user/AWS_PAIRE_KEY_TERRAFORM.pem"
+    destination = "/home/ubuntu/AWS_PAIRE_KEY_TERRAFORM.pem"
 
     connection {
       type = "ssh"
       host = self.public_ip
-      user = "ec2-user"
+      user = "ubuntu"
       private_key = "${file("./AWS_PAIRE_KEY_TERRAFORM.pem")}"
     }
   }
